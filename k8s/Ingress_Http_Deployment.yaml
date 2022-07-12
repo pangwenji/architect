@@ -1,0 +1,17 @@
+apiversion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: nginx-mc
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        name:nginx
+    spec:
+      contaniers:
+         - name: nginx
+           image: wangyanglinux/myapp:v1
+           imagePullPolicy: IfNotPresent
+           ports: 
+             - contaniers: 80

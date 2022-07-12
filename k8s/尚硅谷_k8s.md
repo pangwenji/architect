@@ -20,6 +20,7 @@
     1、定义
     2、代理模式分类
     3、Ingress
+      
 九、存储configMap
 十、储存Secret
 十一、储存Volume

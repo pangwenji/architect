@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dapi-test-Pod
+spec:
+  containers:
+    - name: test-container
+      image: hub.atguigu.com/library/myapp:v1
+      command: ["/bin/sh", "-c", "env"]
+      env:
+        - name: SPECIAL_EVEL_KEY
+          valueFrom:
+             configMapKeyRef:
+              name: special_config
+              key: spceial.how
+        - name: SPECIAL_TYPE_KEY
+          valueFrom:
+             configMapKeyRef:
+              name: special_config
+              key: spceial.type
+      envFrom:
+        - configMapRef: 
+            name: env-config
+  restartPolicy: Never
